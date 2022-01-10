@@ -1,0 +1,21 @@
+
+
+
+.btn{
+font-family: 'Courier New', Courier, monospace;
+color: black;
+    
+}
+
+h1{
+    display:flex;
+    justify-content: right;
+    margin-right: 75px;
+    color: red;
+}
+
+
+
+.container-fluid{
+    background-color: red;
+}
