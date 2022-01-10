@@ -1,6 +1,6 @@
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
-// THEN a timer startsXX and I am presented with a question
+// THEN a timer starts and I am presented with a question
 // WHEN I answer a question
 // THEN I am presented with another question
 // WHEN I answer a question incorrectly
@@ -14,13 +14,29 @@ let button = document.querySelector("#btn")
 let time = 60;
 let timeInterval;
 
-
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
 
 function buildQuiz() { }
 function displayResults() { }
 function startQuiz() {
-
-    document.getElementById("container").classList.remove("hide")
+  
+    const output = [];
+    myQuestions.forEach(
+        (CurrentQuestion, questionNumber) => {
+            const answers = [];
+            for(letter in CurrentQuestion.answers){
+                answers.push(
+                    <label>
+                        <input type ="radio" name="questions${quesionNumber}" value="${letter}"></input>
+                        ${letter} :
+                        ${CurrentQuestion.answers[letter]}
+                    </label>
+                )
+            }
+        }
+    )
 
     timeInterval = setInterval(function () {
 
@@ -65,3 +81,4 @@ const myQuestions = [
         correctAnswer: "b",
     }
 ];
+
